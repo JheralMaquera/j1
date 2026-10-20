@@ -2,9 +2,9 @@
 require __DIR__ . '/../modelo/Modelo.php';
 $modelo = new Modelo();
 
-if (isset($_POST['accion'])) {
-    $id = (int) ($_POST['id'] ?? 0);
-    if ($_POST['accion'] == 'eliminar') $modelo->eliminar($id);
+if ($_POST) {
+    $id = (int) $_POST['id'];
+    if (isset($_POST['borrar'])) $modelo->eliminar($id);
     elseif ($id) $modelo->actualizar($id, $_POST['nombre'], $_POST['precio']);
     else $modelo->insertar($_POST['nombre'], $_POST['precio']);
     header('Location: index.php');
