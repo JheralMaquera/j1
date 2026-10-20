@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS examen_mvc
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE examen_mvc;
+
+CREATE TABLE IF NOT EXISTS productos (
+  id INT NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(50) NOT NULL,
+  precio DECIMAL(7,2) NOT NULL,
+  PRIMARY KEY (id)
+);
